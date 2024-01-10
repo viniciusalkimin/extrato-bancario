@@ -31,4 +31,15 @@ public class SaldoService {
         }
         return total;
     }
+
+    public static BigDecimal processarSaldoPorCategoria(List<TransacaoBancaria> transacoes, String categoria) {
+        BigDecimal saldoCategoria = BigDecimal.ZERO;
+        List<BigDecimal> saldoCategoriaFiltrado = transacoes.stream().filter(t -> t.getNome().equals(categoria))
+                .map(TransacaoBancaria::getValor).toList();
+
+        for (BigDecimal saldo: saldoCategoriaFiltrado) {
+            saldoCategoria = saldoCategoria.add(saldo);
+        }
+        return saldoCategoria;
+    }
 }
