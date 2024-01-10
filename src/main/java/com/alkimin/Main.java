@@ -6,7 +6,7 @@ import com.alkimin.usecase.ExtratoBancarioAnalyzer;
 import java.io.IOException;
 
 public class Main {
-    public static final String PATH = "src/resource/";
+    public static final String PATH = "src/main/resource/";
     public static final String NOMEARQUIVO = "extrato.csv";
 
     public static void main(String[] args) throws IOException {
