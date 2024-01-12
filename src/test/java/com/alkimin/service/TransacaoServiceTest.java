@@ -17,5 +17,6 @@ class TransacaoServiceTest {
         var transacao = transacoes.get(0);
 
         assertEquals("Salario", transacao.getNome());
+        assertEquals("5000", transacao.getValor().toString());
     }
 }

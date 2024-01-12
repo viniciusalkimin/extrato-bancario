@@ -1,0 +1,12 @@
+[
+  {
+    "data": "2022-12-05",
+    "nome": "salario",
+    "valor": 5000
+  },
+  {
+    "data": "2022-12-02",
+    "nome": "aluguel",
+    "valor": -1500
+  }
+]

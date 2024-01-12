@@ -42,4 +42,18 @@ public class SaldoService {
         }
         return saldoCategoria;
     }
+
+    public static BigDecimal processarSaldoMaiorIgualQue(List<TransacaoBancaria> transacoes, BigDecimal valor, Month month) {
+        BigDecimal valorTotal = BigDecimal.ZERO;
+        List<BigDecimal> listaFiltrada = transacoes.stream()
+                .filter(t -> t.getValor().compareTo(valor) >= 0 && t.getData().getMonth() == month)
+                .map(t -> t.getValor())
+                .toList();
+
+        for (BigDecimal valorTransacao: listaFiltrada) {
+            valorTotal = valorTotal.add(valorTransacao);
+        }
+        return  valorTotal;
+    }
+
 }
